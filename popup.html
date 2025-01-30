@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distructor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Distructor</h1>
+    <h3>made by <a href="https://youtube.com/@algorethm_" target="_blank">Algorethm</a></h3>
+    <div class="toggle">
+        <label class="switch">
+            <input type="checkbox" id="distructorToggle">
+            <span class="slider"></span>
+        </label>
+        <span id="statusLabel">Off</span>
+    </div>
+    <div class="tabs">
+        <button class="tab-button active" data-tab="setter">Setter</button>
+        <button class="tab-button" data-tab="siteList">Site List</button>
+        <button class="tab-button" data-tab="whitelist">Whitelist</button>
+    </div>
+    <div id="setter" class="tab-content">
+        <form id="urlForm">
+            <input type="text" id="urlInput" placeholder="Enter domain/subdomain to block" required>
+            <div id="daySelector">
+                <label><input type="checkbox" value="Sunday">Sun</label>
+                <label><input type="checkbox" value="Monday">Mon</label>
+                <label><input type="checkbox" value="Tuesday">Tue</label>
+                <label><input type="checkbox" value="Wednesday">Wed</label>
+                <label><input type="checkbox" value="Thursday">Thu</label>
+                <label><input type="checkbox" value="Friday">Fri</label>
+                <label><input type="checkbox" value="Saturday">Sat</label>
+            </div>
+            <input type="time" id="startTime" required>
+            <input type="number" id="duration" min="0.1" step="0.1" placeholder="Duration in hours" required>
+            <select id="recurrence" required>
+                <option value="daily">Daily</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+            </select>
+            <button type="submit">Add</button>
+        </form>
+    </div>
+    <div id="siteList" class="tab-content" style="display:none;">
+        <ul id="urlList"></ul>
+    </div>
+    <div id="whitelist" class="tab-content" style="display:none;">
+        <input type="text" id="whitelistInput" placeholder="Enter domain/subdomain to whitelist">
+        <button id="addWhitelist">Add</button>
+        <ul id="whitelistUrls"></ul>
+    </div>
+    <div class="settings-actions">
+        <button id="exportSettings">Export Settings</button>
+        <button id="importSettings">Import Settings</button>
+        <input type="file" id="importFile" style="display: none;">
+    </div>
+    <div id="toast" class="toast"></div>
+    <script src="popup.js"></script>
+</body>
+</html>
